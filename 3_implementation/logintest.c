@@ -1,0 +1,77 @@
+/* #include "stdio.h"
+# ifndef _NAMET_
+# define _NAMET_
+ typedef enum function_status_t
+ {
+    SUCCESS,
+    FAILED_TO_LOGIN
+}
+function_status_t;
+function_status_t passtest();
+function_status_t passtest();
+#endif*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+//#include <conio.h>
+void login()
+{
+	int a=0,i=0;
+    char uname[10],c=' ';
+    char pword[10];
+   // char user[10]="user";
+   // char pass[10]="pass";
+    do
+{
+	system("cls");
+
+    printf("\n  =========================  LOGIN FORM  =========================  ");
+    printf(" \n                       ENTER USERNAME:-");
+	scanf("%s", uname);
+	printf(" \n                       ENTER PASSWORD:-");
+	while(i<10)
+	{
+	    pword[i]=getchar();
+	    c=pword[i];
+	    if(c==13) break;
+	    else printf("*");
+	    i++;
+	}
+	pword[i]='\0';
+	//char code=pword;
+	i=0;
+	//scanf("%s",&pword);
+		if(strcmp(uname,"user")==0 && strcmp(pword,"pass")==0)
+	{
+	printf("  \n\n\n       WELCOME TO OUR SYSTEM !!!! LOGIN IS SUCCESSFUL");
+	printf("\n\n\n\t\t\t\tPress any key to continue...");
+	getchar();//holds the screen
+	break;
+	}
+	else
+	{
+		printf("\n        SORRY !!!!  LOGIN IS UNSUCESSFUL");
+		a++;
+
+		getchar();//holds the screen
+
+	}
+}
+	while(a<=2);
+	if (a>2)
+	{
+		printf("\nSorry you have entered the wrong username and password for four times!!!");
+
+		getchar();
+
+		}
+		system("cls");
+}
+
+
+void logintest()
+{
+TEST_ASSERT_EQUAL(FAILED_TO_LOGIN, login("abcd","lmno"));
+
+}
+
